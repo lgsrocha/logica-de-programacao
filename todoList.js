@@ -20,14 +20,14 @@ const tarefas = [
     status: false,
   },
   {
-    id: 2,
+    id: 42,
     descricao: "Comprar manteiga",
     dataDeInicio: "08/07/2023, 18:45:37",
     dataDeConclusao: null,
     status: false,
   },
   {
-    id: 3,
+    id: 2,
     descricao: "Comprar café",
     dataDeInicio: "28/08/2023, 14:26:33",
     dataDeConclusao: null,
@@ -40,11 +40,13 @@ const tarefas = [
 */
 
 function novaTarefa(descricao) {
-  let id = tarefas.length;
-  let data = new Date().toLocaleString("pt-BR");
-  let status = false;
-  let tarefa = { id, descricao, data, status };
-  tarefas.push(tarefa);
+    let maiorId = tarefas.reduce((a, b) => b.id > a ? b.id : a, 0);
+    let id = maiorId + 1;
+    let dataDeInicio = new Date().toLocaleString("pt-BR");
+    let dataDeConclusao = null;
+    let status = false;
+    let tarefa = { id, descricao, dataDeInicio, dataDeConclusao, status };
+    tarefas.push(tarefa);
 }
 novaTarefa("Entregar projeto no prazo"); //Exemplo de uso
 
@@ -83,8 +85,8 @@ function editarTarefaPorDescricao(tarefas, descricao, novaDescricao, novoStatus)
   }
 }
 
-editarTarefaPorDescricao(tarefas, "Comprar manteiga", "Comprar muita margarina", true)
-console.log(tarefas)
+editarTarefaPorDescricao(tarefas, "Comprar manteigx", "Comprar muita margarina", true)
+console.log("tarefas",tarefas)
 
 /*
     Deletar @Dani
