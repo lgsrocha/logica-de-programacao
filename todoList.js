@@ -59,6 +59,29 @@ novaTarefa("Entregar projeto no prazo"); //Exemplo de uso
     Ler @Alan
 */
 
+function lerTarefas(tarefas){
+  if (tarefas.length === 0){
+    console.log("Lista de Tarefas em Branco!");
+    return false; // Condição para caso for em branco retornar e parar aqui
+  }else{
+    console.log("Tarefas Cadastradas: ")
+    for (const tarefa of tarefas){ // Loop para percorrer todas as tarefas
+      console.log("ID: ",tarefa.id);
+      console.log("Descrição: ", tarefa.descricao);
+      console.log("Data de Início: ", tarefa.dataDeInicio);
+      if (tarefa.dataDeConclusao === null){ // If para garantir que não vai apresentar NULL
+        console.log("Data de Conclusão: Pendente");
+      }else{
+        console.log("Data de Conclusão: ", tarefa.dataDeConclusao);
+      }      
+      console.log("Status: ", tarefa.status ? "Concluída" : "Pendente"); // Faz a comparação booleana, se for true aparece Concluída, e false Pendente
+      console.log("*".repeat(15)); // Separar cada tarefa por *
+    }
+  }
+}
+
+lerTarefas(tarefas);
+
 /*
     Editar @Samir
 */
