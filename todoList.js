@@ -46,7 +46,12 @@ function novaTarefa(descricao) {
     let dataDeConclusao = null;
     let status = false;
     let tarefa = { id, descricao, dataDeInicio, dataDeConclusao, status };
-    tarefas.push(tarefa);
+    try{
+      tarefas.push(tarefa);
+      console.log(`tarefa adicionada com sucesso, ID: ${id}`)}
+    catch(erro) {
+      console.log(erro)
+    }
 }
 novaTarefa("Entregar projeto no prazo"); //Exemplo de uso
 
