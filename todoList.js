@@ -53,11 +53,15 @@ function novaTarefa(descricao) {
       console.log(erro)
     }
 }
-novaTarefa("Entregar projeto no prazo"); //Exemplo de uso
+// novaTarefa("Entregar projeto no prazo"); //Exemplo de uso
 
 /*
     Ler @Alan
 */
+
+function exibeTarefas(){
+  return console.log(tarefas)
+}
 
 /*
     Editar @Samir
@@ -74,7 +78,7 @@ function editarTarefaPorId(tarefas, id, novaDescricao, novoStatus) {
     console.log("Tarefa não encontrada com o ID fornecido.");
   }
 }
-editarTarefaPorId(tarefas, 0, 'descrição atualizada', true)
+// editarTarefaPorId(tarefas, 0, 'descrição atualizada', true)
 
 
 function editarTarefaPorDescricao(tarefas, descricao, novaDescricao, novoStatus) {
@@ -90,8 +94,8 @@ function editarTarefaPorDescricao(tarefas, descricao, novaDescricao, novoStatus)
   }
 }
 
-editarTarefaPorDescricao(tarefas, "Comprar manteigx", "Comprar muita margarina", true)
-console.log("tarefas",tarefas)
+// editarTarefaPorDescricao(tarefas, "Comprar manteigx", "Comprar muita margarina", true)
+// console.log("tarefas",tarefas)
 
 /*
     Deletar @Dani
@@ -100,3 +104,4 @@ console.log("tarefas",tarefas)
 /*
     Pesquisar @Dani
 */
+module.exports = { novaTarefa, editarTarefaPorDescricao, editarTarefaPorId, exibeTarefas}
