@@ -123,4 +123,4 @@ function editarTarefaPorDescricao(tarefas, descricao, novaDescricao, novoStatus)
 /*
     Pesquisar @Dani
 */
-module.exports = { novaTarefa, editarTarefaPorDescricao, editarTarefaPorId, exibeTarefas}
+module.exports = { novaTarefa, editarTarefaPorDescricao, editarTarefaPorId, lerTarefas, tarefas}
