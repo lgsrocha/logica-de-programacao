@@ -120,7 +120,32 @@ function editarTarefaPorDescricao(tarefas, descricao, novaDescricao, novoStatus)
     Deletar @Dani
 */
 
+function deletarTarefa(tarefas, id) {
+
+  const tarefaIndex = tarefas.findIndex((item) => item.id === id);
+
+  if (tarefaIndex !== -1) {
+    tarefas.splice(tarefaIndex, 1);
+  } else {
+    console.log("Tarefa não encontrada!");
+  }
+
+}
+
+// deletarTarefa(tarefas, 2);
+
+
 /*
     Pesquisar @Dani
 */
+
+function pesquisarTarefa(tarefas, pesquisa) {
+
+  const tarefasEncontradas = tarefas.filter((tarefa) => tarefa.descricao.toLowerCase().includes(pesquisa.toLowerCase()));
+
+  lerTarefas(tarefasEncontradas);
+  
+}
+pesquisarTarefa(tarefas, "comprar");
+
 module.exports = { novaTarefa, editarTarefaPorDescricao, editarTarefaPorId, lerTarefas, tarefas}
