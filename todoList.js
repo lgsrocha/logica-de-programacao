@@ -80,7 +80,7 @@ function lerTarefas(tarefas){
   }
 }
 
-lerTarefas(tarefas);
+// lerTarefas(tarefas);
 
 /*
     Editar @Samir

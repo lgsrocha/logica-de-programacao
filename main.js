@@ -7,8 +7,9 @@ const prompt = require("prompt-sync")();
 
 
 console.log("--------------------------------")
-console.log("\n bem vindo a lista de tarefas \n")
+console.log("\n Bem vindo à lista de tarefas \n")
 console.log("--------------------------------")
+main()
 function main (){
     const escolha = prompt("Digite 1 para ver a lista, 2 para adicionar um item ou 3 para editar: ")
     switch (escolha) {
@@ -23,10 +24,15 @@ function main (){
             break;
 
         case "3":
+            let editar = prompt("digite o Id da tarefa a ser editada:")            
             break;
 
         case "4":
-            
+            let excluir = prompt("digite o Id da tarefa a ser excluída")
+            break;
+
+        case "5":
+            let pesquisar = prompt("deseja pesquisar a tarefa por Id ou descrição?")
             break;
 
         default:
@@ -34,3 +40,4 @@ function main (){
             break;
     }
 }
+
