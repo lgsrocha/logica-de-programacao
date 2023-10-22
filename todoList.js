@@ -137,4 +137,14 @@ function deletarTarefa(tarefas, id) {
 /*
     Pesquisar @Dani
 */
-module.exports = { novaTarefa, editarTarefaPorDescricao, editarTarefaPorId,deletarTarefa , lerTarefas, tarefas}
+
+function pesquisarTarefa(tarefas, pesquisa) {
+
+  const tarefasEncontradas = tarefas.filter((tarefa) => tarefa.descricao.toLowerCase().includes(pesquisa.toLowerCase()));
+
+  lerTarefas(tarefasEncontradas);
+  
+}
+// pesquisarTarefa(tarefas, "comprar")
+
+module.exports = { novaTarefa, editarTarefaPorDescricao, editarTarefaPorId,deletarTarefa , lerTarefas, pesquisarTarefa ,tarefas}

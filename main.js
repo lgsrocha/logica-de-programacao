@@ -2,7 +2,14 @@
  * Aplicação que deve chamar as funções do Crud
  * Necessário prompt-sync, caso não esteja funcionando execute npm i prompt-sync
  */
-const { novaTarefa, editarTarefaPorDescricao, editarTarefaPorId, lerTarefas,deletarTarefa , tarefas } = require('./todoList.js');
+const { novaTarefa, 
+    editarTarefaPorDescricao, 
+    editarTarefaPorId, 
+    lerTarefas,
+    deletarTarefa,
+    pesquisarTarefa,
+    tarefas} = require('./todoList.js');
+
 const prompt = require("prompt-sync")();
 
 
@@ -11,7 +18,7 @@ console.log("\n Bem vindo à lista de tarefas \n")
 console.log("--------------------------------")
 main()
 function main (){
-    lerTarefas(tarefas)
+    // lerTarefas(tarefas)
     // const tarefa = prompt(
     //     `
     //     1 Para adicionar tarefa
@@ -74,10 +81,12 @@ const escolha = prompt(``)
             main()
             break;
 
-        // case "6":
-        //     // excluir
-        //     let excluir = prompt("deseja pesquisar a tarefa por Id ou descrição?")
-        //     break;
+        case "6":
+            // pesquisar
+            let pesquisa = prompt("Digite parte do texto da tarefa que deseja encontrar: ")
+            pesquisarTarefa(tarefas, pesquisa)
+            main()
+            break;
 
         default:
             console.log("Opção inválida")
