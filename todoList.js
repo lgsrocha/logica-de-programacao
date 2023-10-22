@@ -86,7 +86,7 @@ function lerTarefas(tarefas){
     Editar @Samir
 */
 function editarTarefaPorId(tarefas, id, novaDescricao, novoStatus) {
-  const tarefaIndex = tarefas.findIndex((tarefa) => tarefa.id === id);
+  const tarefaIndex = tarefas.findIndex((tarefa) => tarefa.id === parseInt(id));
   if (tarefaIndex !== -1) {
     tarefas[tarefaIndex].descricao = novaDescricao;
     if (novoStatus) {
@@ -97,7 +97,8 @@ function editarTarefaPorId(tarefas, id, novaDescricao, novoStatus) {
     console.log("Tarefa não encontrada com o ID fornecido.");
   }
 }
-// editarTarefaPorId(tarefas, 0, 'descrição atualizada', true)
+// editarTarefaPorId(tarefas, 0, 'descrição atualizada', false)
+
 
 
 function editarTarefaPorDescricao(tarefas, descricao, novaDescricao, novoStatus) {
@@ -120,7 +121,20 @@ function editarTarefaPorDescricao(tarefas, descricao, novaDescricao, novoStatus)
     Deletar @Dani
 */
 
+function deletarTarefa(tarefas, id) {
+
+  const tarefaIndex = tarefas.findIndex((item) => item.id === id);
+
+  if (tarefaIndex !== -1) {
+    tarefas.splice(tarefaIndex, 1);
+    console.log("Tarefa excluída com sucesso!")
+  } else {
+    console.log("Tarefa não encontrada!");
+  }
+
+}
+
 /*
     Pesquisar @Dani
 */
-module.exports = { novaTarefa, editarTarefaPorDescricao, editarTarefaPorId, lerTarefas, tarefas}
+module.exports = { novaTarefa, editarTarefaPorDescricao, editarTarefaPorId,deletarTarefa , lerTarefas, tarefas}
