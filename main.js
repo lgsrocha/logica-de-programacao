@@ -2,7 +2,8 @@
  * Aplicação que deve chamar as funções do Crud
  * Necessário prompt-sync, caso não esteja funcionando execute npm i prompt-sync
  */
-const { novaTarefa, 
+const { 
+    novaTarefa, 
     editarTarefaPorDescricao, 
     editarTarefaPorId, 
     lerTarefas,
@@ -53,10 +54,8 @@ const escolha = prompt(``)
             //por id
             let idAEditar = prompt("Digite o ID da tarefa a ser editada: ")
             let descricaoTarefa = prompt("Digite a nova descricao da tarefa: ")
-            let concluir = prompt("deseja concluir a tarefa? sim ou nao: ")
-            let bool
-            concluir === "sim" ? bool = true : bool = false
-            editarTarefaPorId(tarefas, idAEditar,descricaoTarefa, bool )
+            let concluir = prompt("deseja concluir a tarefa? sim ou nao: ")            
+            editarTarefaPorId(tarefas, idAEditar,descricaoTarefa, concluir === "sim" ? true : bool = false )
             main()
             break;
             
