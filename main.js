@@ -15,7 +15,7 @@ const prompt = require("prompt-sync")();
 
 
 console.log("--------------------------------")
-console.log("\n Bem vindo à lista de tarefas \n")
+console.log("\n Bem- vindo(a) à lista de tarefas \n")
 console.log("--------------------------------")
 main()
 function main (){
