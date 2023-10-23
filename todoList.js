@@ -147,4 +147,4 @@ function pesquisarTarefa(tarefas, pesquisa) {
 }
 // pesquisarTarefa(tarefas, "comprar")
 
-module.exports = { novaTarefa, editarTarefaPorDescricao, editarTarefaPorId,deletarTarefa , lerTarefas, pesquisarTarefa ,tarefas}
+module.exports = { novaTarefa, editarTarefaPorDescricao, editarTarefaPorId,deletarTarefa , lerTarefas, pesquisarTarefa, tarefas}

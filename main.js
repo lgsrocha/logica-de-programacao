@@ -34,6 +34,7 @@ Digite:
 4 para editar por descrição
 5 para excluir
 6 para pesquisar 
+7 para sair da aplicação
 `)
 const escolha = prompt(``)
 
@@ -54,8 +55,8 @@ const escolha = prompt(``)
             //por id
             let idAEditar = prompt("Digite o ID da tarefa a ser editada: ")
             let descricaoTarefa = prompt("Digite a nova descricao da tarefa: ")
-            let concluir = prompt("deseja concluir a tarefa? sim ou nao: ")            
-            editarTarefaPorId(tarefas, idAEditar,descricaoTarefa, concluir === "sim" ? true : bool = false )
+            let concluir = prompt("deseja concluir a tarefa? S ou N: ")            
+            editarTarefaPorId(tarefas, idAEditar,descricaoTarefa, concluir === "s" || "S" ? true : false )
             main()
             break;
             
@@ -66,7 +67,7 @@ const escolha = prompt(``)
             let descricaoTarefa2 = prompt("Digite a nova descricao da tarefa: ")
             let concluir2 = prompt("deseja concluir a tarefa? S ou N: ")
             let result
-            concluir2 === "S" || "s" ? result = true :result = false
+            concluir2 === "S" || "s" ? result = true : result = false
 
             editarTarefaPorDescricao(tarefas, descricaAEditar,descricaoTarefa2, null)
             main()
@@ -87,8 +88,13 @@ const escolha = prompt(``)
             main()
             break;
 
+        case "7":
+            // sair
+            return;
+
         default:
             console.log("Opção inválida")
+            main()
             break;
     }
 }
