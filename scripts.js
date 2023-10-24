@@ -65,7 +65,7 @@ function lerTarefas(tarefas) {
   }
 }
 
-lerTarefas(tarefas);
+// lerTarefas(tarefas);
 
 function editarTarefaPorId(tarefas, id, novaDescricao, novoStatus) {
   const tarefaIndex = tarefas.findIndex((tarefa) => tarefa.id === parseInt(id));
@@ -140,14 +140,31 @@ function criar_tabela() {
   let thc3 = thlinha.insertCell(2);
   let thc4 = thlinha.insertCell(3);
   let thc5 = thlinha.insertCell(4);
+  let thc6 = thlinha.insertCell(5);
 
   thc1.innerHTML = "ID";
   thc2.innerHTML = "Descrição";
   thc3.innerHTML = "Data de Início";
   thc4.innerHTML = "Data de Conclusão";
   thc5.innerHTML = "Estado";
+  thc6.innerHTML = "";
+  
 
   thlinha.classList.add("thlinha");
+  thc6.classList.add("acoes")
+
+  // Botão nova tarefa
+  let novaTarefaBtn = document.createElement("button");
+  novaTarefaBtn.innerHTML = "Nova Tarefa";
+  novaTarefaBtn.addEventListener("click", function() {
+    let novaDescricao = prompt("Digite sua nova descrição")
+    if (novaDescricao.length < 1){
+      return alert("Descrição inválida");
+    }
+    novaTarefa(novaDescricao)
+    criar_tabela()
+  });
+  thc6.appendChild(novaTarefaBtn);
 
   for (let contador = 0; contador < tarefas.length; contador++) {
     let linha = tabela.insertRow();
@@ -156,7 +173,9 @@ function criar_tabela() {
     let dataInicio = linha.insertCell(2);
     let dataConclusao = linha.insertCell(3);
     let status = linha.insertCell(4);
+    let acoes = linha.insertCell(5);
 
+    
     ID.innerHTML = tarefas[contador].id;
     descricao.innerHTML = tarefas[contador].descricao;
     dataInicio.innerHTML = tarefas[contador].dataDeInicio;
@@ -164,15 +183,46 @@ function criar_tabela() {
     status.innerHTML = tarefas[contador].status === false ? 'A fazer' : 'Feito';
 
     if (contador >= 0) {
+      linha.setAttribute("id",tarefas[contador].id) //setando IDs para cara row da tabela
       ID.classList.add("celula-td");
       descricao.classList.add("celula-td");
       dataInicio.classList.add("celula-td");
       dataConclusao.classList.add("celula-td");
       status.classList.add("celula-td");
+      acoes.classList.add("acoes");
+
+      //Botões
+      let editarBotao = document.createElement("button");
+      editarBotao.innerHTML = "Editar";
+      editarBotao.addEventListener("click", function() {
+        let novaDescricao = prompt("Digite uma nova descrição para a tarefa")
+        if (novaDescricao.length < 1){
+          return alert("Descrição inválida");
+        }
+        editarTarefaPorId(tarefas, parseInt(linha.id), novaDescricao,null)
+        criar_tabela()
+      });
+      acoes.appendChild(editarBotao);
+    
+      let excluirBotao = document.createElement("button");
+      excluirBotao.innerHTML = "Excluir";
+      excluirBotao.addEventListener("click", function() {
+        deletarTarefa(tarefas, parseInt(linha.id))
+        criar_tabela()
+      });
+      acoes.appendChild(excluirBotao);
+
+      let finalizaBotao = document.createElement("button");
+      finalizaBotao.innerHTML = "Finalizar";
+      finalizaBotao.addEventListener("click", function() {
+        editarTarefaPorId(tarefas, parseInt(linha.id),descricao.innerText,true)
+        criar_tabela()
+      });
+
+      status.innerText === "Feito" ? "" : acoes.appendChild(finalizaBotao);
     }
   }
   conteudo.appendChild(tabela);
-
   conteudo.style.display = "block";
 }
 
