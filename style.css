@@ -1,3 +1,10 @@
+/* Fonte */
+
+@import url('https://fonts.googleapis.com/css2?family=Mooli&display=swap');
+*{
+    font-family: 'Mooli', sans-serif;
+}
+
 /* Cabeçalho e links */
 
 #cabecalho {
@@ -61,6 +68,10 @@
     border-radius: 5px;
 }
 
+.conteudo{
+    padding-top: 50px;
+}
+
 .titulo{
     font-size:x-large;
     padding-bottom: 5px;
@@ -122,4 +133,11 @@ footer{
 .social-links i {
     font-size: 18px;
 }
-
+.celula-td{
+    width: 200px;
+    padding-top: 10px;
+}
+.footer{
+    color: white;
+    margin-top: 100px;    
+}
