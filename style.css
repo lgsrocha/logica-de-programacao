@@ -1,9 +1,10 @@
 /* Fonte */
 
 @import url('https://fonts.googleapis.com/css2?family=Mooli&display=swap');
-*{
+* {
     font-family: 'Mooli', sans-serif;
 }
+
 
 /* Cabeçalho e links */
 
@@ -68,21 +69,55 @@
     border-radius: 5px;
 }
 
-.conteudo{
+.conteudo {
     padding-top: 50px;
 }
 
-.titulo{
-    font-size:x-large;
+.titulo {
+    font-size: x-large;
     padding-bottom: 5px;
     border: none;
     border-bottom: 0.5px solid #99999954;
 }
 
 
+/* Botoes */
+
+.acoes_tarefas {
+    border: 2 px solid;
+    background: #ffffff;
+    padding: 10px;
+    margin-right: 10px;
+    border-radius: 15px;
+}
+
+.acoes_tarefas:hover {
+    background: #09002b;
+    color: white;
+}
+
+.input-container {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-top: 1.5%;
+}
+
+#pesquisar {
+    border: 2px solid black;
+    border-radius: 10px;
+    padding-right: 5%;
+}
+
+#pesquisar_botao {
+    border-radius: 10px;
+    margin-left: 5px;
+}
+
+
 /* Social Links e Footer */
 
-footer{
+footer {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -92,12 +127,13 @@ footer{
     margin-left: auto;
     margin-right: auto;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
-    background-color:#0a0033;
+    background-color: #0a0033;
     border-radius: 20px;
     justify-content: center;
     font-family: cursive;
     font-style: oblique;
 }
+
 .social-links {
     list-style: none;
     padding: 0;
@@ -127,19 +163,21 @@ footer{
 
 .social-links a:hover {
     background-color: #ffe100;
-    color:white;
+    color: white;
 }
 
 .social-links i {
     font-size: 18px;
 }
-.celula-td{
+
+.celula-td {
     width: 200px;
     padding-top: 10px;
 }
-.footer{
+
+.footer {
     color: white;
-    margin-top: 100px;    
+    margin-top: 100px;
 }
 
 .acoes {
@@ -156,4 +194,4 @@ footer{
     border-radius: 0.25rem;
     cursor: pointer;
     margin: 0.5rem 1rem 0.5rem 0;
-  }
+}
