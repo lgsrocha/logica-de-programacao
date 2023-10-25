@@ -139,12 +139,18 @@ function deletarTarefa(tarefas, id) {
 */
 
 function pesquisarTarefa(tarefas, pesquisa) {
+  let tarefasEncontradas 
 
-  const tarefasEncontradas = tarefas.filter((tarefa) => tarefa.descricao.toLowerCase().includes(pesquisa.toLowerCase()));
+  if(Number(pesquisa)){
+    tarefasEncontradas = tarefas.filter((tarefa) => tarefa.id === Number(pesquisa));
+  }else{
+    tarefasEncontradas = tarefas.filter((tarefa) => 
+      tarefa.descricao.toLowerCase().includes(pesquisa.toLowerCase()));
+  }
 
   lerTarefas(tarefasEncontradas);
   
 }
-// pesquisarTarefa(tarefas, "comprar")
+pesquisarTarefa(tarefas, "comprar")
 
 module.exports = { novaTarefa, editarTarefaPorDescricao, editarTarefaPorId,deletarTarefa , lerTarefas, pesquisarTarefa, tarefas}

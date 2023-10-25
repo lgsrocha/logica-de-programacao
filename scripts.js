@@ -111,11 +111,17 @@ function deletarTarefa(tarefas, id) {
 }
 
 function pesquisarTarefa(tarefas, pesquisa) {
-    const tarefasEncontradas = tarefas.filter((tarefa) =>
-        tarefa.descricao.toLowerCase().includes(pesquisa.toLowerCase())
-    );
-
+    let tarefasEncontradas 
+  
+    if(Number(pesquisa)){
+      tarefasEncontradas = tarefas.filter((tarefa) => tarefa.id === Number(pesquisa));
+    }else{
+      tarefasEncontradas = tarefas.filter((tarefa) => 
+        tarefa.descricao.toLowerCase().includes(pesquisa.toLowerCase()));
+    }
+  
     lerTarefas(tarefasEncontradas);
+    
 }
 
 
