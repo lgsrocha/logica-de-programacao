@@ -1,0 +1,198 @@
+/* Fonte */
+
+@import url('https://fonts.googleapis.com/css2?family=Mooli&display=swap');
+* {
+    font-family: 'Mooli', sans-serif;
+}
+
+
+/* Cabeçalho e links */
+
+#cabecalho {
+    background-color: #09002b;
+    margin-top: 5px;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    border-style: outset;
+    border-width: 2px;
+}
+
+.tamanho_maximo_img {
+    height: 100px;
+    width: auto;
+    padding-bottom: 1%;
+}
+
+.links {
+    border-color: black;
+    background: white;
+    margin: 10px;
+    color: black;
+    justify-content: space-around;
+    position: relative;
+    text-decoration: none;
+}
+
+.links a::after {
+    content: "";
+    display: block;
+    width: 0;
+    height: 2px;
+    background-color: black;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    transition: width 0.3s ease;
+}
+
+.links a:hover {
+    color: #ffe100;
+}
+
+.links a:hover::after {
+    width: 100%;
+}
+
+
+/* Conteudo principal  */
+
+#conteudo {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: rgb(255, 255, 255);
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: 0 0 3px #c76c1178;
+    text-align: center;
+    border-radius: 5px;
+}
+
+.conteudo {
+    padding-top: 50px;
+}
+
+.titulo {
+    font-size: x-large;
+    padding-bottom: 5px;
+    border: none;
+    border-bottom: 0.5px solid #99999954;
+}
+
+
+/* Botoes */
+
+.acoes_tarefas {
+    border: 2 px solid;
+    background: #ffffff;
+    padding: 10px;
+    margin-right: 10px;
+    border-radius: 15px;
+}
+
+.acoes_tarefas:hover {
+    background: #09002b;
+    color: white;
+}
+
+.input-container {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-top: 1.5%;
+}
+
+#pesquisar {
+    border: 2px solid black;
+    border-radius: 10px;
+    padding-right: 5%;
+    text-align:center;
+}
+
+#pesquisar_botao {
+    border-radius: 10px;
+    margin-left: 5px;
+}
+
+
+/* Social Links e Footer */
+
+footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 70%;
+    width: 100%;
+    margin-top: 7px;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+    background-color: #0a0033;
+    border-radius: 20px;
+    justify-content: center;
+    font-family: cursive;
+    font-style: oblique;
+}
+
+.social-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.social-links li {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.social-links li:last-child {
+    margin-right: 0;
+}
+
+.social-links a {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    color: #2100a3;
+    background-color: #ffffff;
+    border-radius: 50%;
+    transition: background-color 0.3s ease;
+}
+
+.social-links a:hover {
+    background-color: #ffe100;
+    color: white;
+}
+
+.social-links i {
+    font-size: 18px;
+}
+
+.celula-td {
+    width: 200px;
+    padding-top: 10px;
+}
+
+.footer {
+    color: white;
+    margin-top: 100px;
+}
+
+.acoes {
+    /* background-color: var(--dark); */
+    border: none;
+    color: var(--red);
+    padding: 1rem 2rem;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 0.25rem;
+    cursor: pointer;
+    margin: 0.5rem 1rem 0.5rem 0;
+}
