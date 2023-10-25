@@ -1,12 +1,12 @@
-const tarefas = [{
-        id: 0,
+let tarefas = [{
+        id: 1,
         descricao: "Comprar pão",
         dataDeInicio: "19/10/2023, 23:26:05",
         dataDeConclusao: null,
         status: false,
     },
     {
-        id: 1,
+        id: 2,
         descricao: "Comprar leite",
         dataDeInicio: "01/09/2023, 10:10:30",
         dataDeConclusao: null,
@@ -20,7 +20,7 @@ const tarefas = [{
         status: false,
     },
     {
-        id: 2,
+        id: 3,
         descricao: "Comprar café",
         dataDeInicio: "28/08/2023, 14:26:33",
         dataDeConclusao: null,
@@ -114,13 +114,14 @@ function pesquisarTarefa(tarefas, pesquisa) {
     let tarefasEncontradas 
   
     if(Number(pesquisa)){
-      tarefasEncontradas = tarefas.filter((tarefa) => tarefa.id === Number(pesquisa));
+        tarefasEncontradas = tarefas.filter((tarefa) => tarefa.id === Number(pesquisa));
     }else{
       tarefasEncontradas = tarefas.filter((tarefa) => 
         tarefa.descricao.toLowerCase().includes(pesquisa.toLowerCase()));
     }
-  
+    
     lerTarefas(tarefasEncontradas);
+    return tarefasEncontradas;
     
 }
 
@@ -136,7 +137,12 @@ const botao_pesquisar = document.getElementById("pesquisar_botao");
 const pesquisa_texto = document.getElementById("pesquisar");
 
 botao_pesquisar.addEventListener("click", function() {
-    pesquisarTarefa(tarefas, pesquisa_texto.value);
+  const backupTarefas = [...tarefas];
+
+  tarefas = pesquisarTarefa(tarefas, pesquisa_texto.value);
+  criar_tabela();
+
+  tarefas = backupTarefas;
 });
 
 function criar_tabela() {
