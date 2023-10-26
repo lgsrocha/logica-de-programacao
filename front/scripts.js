@@ -166,9 +166,15 @@ function criar_tabela() {
     thc5.innerHTML = "Estado";
     thc6.innerHTML = "";
 
+    thc1.classList.add("thclass");
+    thc2.classList.add("thclass");
+    thc3.classList.add("thclass");
+    thc4.classList.add("thclass");
+    thc5.classList.add("thclass");
 
     thlinha.classList.add("thlinha");
     thc6.classList.add("acoes")
+
 
     // Botão nova tarefa
     let novaTarefaBtn = document.createElement("button");
